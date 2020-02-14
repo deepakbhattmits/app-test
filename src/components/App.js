@@ -35,7 +35,7 @@ class App extends Component {
 	}
 
 	render() {
-		console.log('TEST');
+		console.log('TEST app');
 		return (
 			<div>
 				{this.renderHeader()}
