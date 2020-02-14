@@ -20,7 +20,7 @@ class CommentBox extends Component {
 	};
 
 	render() {
-		console.log('TEST commentbox');
+		console.log('TEST commentbox. ');
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
