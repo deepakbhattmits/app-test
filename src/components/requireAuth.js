@@ -22,7 +22,7 @@ export default ChildComponent => {
 		}
 
 		render() {
-			console.log('TEST requireAuth');
+			console.log('TEST requireAuth .');
 			return <ChildComponent {...this.props} />;
 		}
 	}
