@@ -11,7 +11,6 @@ class CommentList extends Component {
 	}
 
 	render() {
-		console.log('TEST commentlist .');
 		return (
 			<div>
 				<h4>Comment List</h4>
