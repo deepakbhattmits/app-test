@@ -38,8 +38,6 @@ class App extends Component {
 		return (
 			<div>
 				{this.renderHeader()}
-				<Route path='/post' component={CommentBox} />
-				<Route path='/' exact component={CommentList} />
 				{/* <CommentBox />
 				<CommentList /> */}
 			</div>
