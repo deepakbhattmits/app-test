@@ -35,12 +35,13 @@ class App extends Component {
 	}
 
 	render() {
-		console.log('TEST app .');
 		return (
 			<div>
 				{this.renderHeader()}
 				<Route path='/post' component={CommentBox} />
 				<Route path='/' exact component={CommentList} />
+				{/* <CommentBox />
+				<CommentList /> */}
 			</div>
 		);
 	}
