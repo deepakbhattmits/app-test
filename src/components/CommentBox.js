@@ -14,20 +14,20 @@ class CommentBox extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-
-		this.props.saveComment(this.state.comment);
+		if (this.state.comment) {
+			this.props.saveComment(this.state.comment);
+		}
 		this.setState({ comment: '' });
 	};
 
 	render() {
-		console.log('TEST commentbox. ');
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<h4>Add a Comment</h4>
 					<textarea onChange={this.handleChange} value={this.state.comment} />
 					<div>
-						<button>Submit Comment</button>
+						<button className='submit'>Submit Comment</button>
 					</div>
 				</form>
 				<button className='fetch-comments' onClick={this.props.fetchComments}>
@@ -39,3 +39,5 @@ class CommentBox extends Component {
 }
 
 export default connect(null, actions)(requireAuth(CommentBox));
+
+// export default connect(null, actions)(CommentBox);
