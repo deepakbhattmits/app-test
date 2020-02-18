@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import CommentBox from 'components/CommentBox';
+// import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 import * as actions from 'actions';
 
@@ -22,15 +22,18 @@ class App extends Component {
 
 	renderHeader() {
 		return (
-			<ul>
-				<li>
-					<Link to='/'>Home</Link>
-				</li>
-				<li>
-					<Link to='/post'>Post A Comment</Link>
-				</li>
-				<li>{this.renderButton()}</li>
-			</ul>
+			<>
+				<ul>
+					<li>
+						<Link to='/'>Home</Link>
+					</li>
+					<li>
+						<Link to='/post'>Post A Comment</Link>
+					</li>
+					<li>{this.renderButton()}</li>
+				</ul>
+				<CommentList />
+			</>
 		);
 	}
 
