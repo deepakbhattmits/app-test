@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Root from './Root';
 import App from './components/App';
+import CommentBox from './components/CommentBox';
+// import CommentList from './components/CommentList';
+import NotFound from './components/NotFound';
 const rootElement = document.querySelector('#root');
 ReactDOM.render(
 	<Root>
@@ -16,14 +19,14 @@ ReactDOM.render(
 				<Route path='/post' exact>
 					<CommentBox />
 				</Route>
-				<Route path='/' exact>
+				{/* <Route path='/' exact>
 					<CommentList />
+				</Route> */}
+				<Route exact path='*'>
+					<NotFound />
 				</Route>
-
-				<Route path='/'>{/* <NotFound /> */}</Route>
 			</Switch>
 		</BrowserRouter>
-		{/* <App /> */}
 	</Root>,
 	rootElement
 );
