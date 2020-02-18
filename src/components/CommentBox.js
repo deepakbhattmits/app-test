@@ -3,10 +3,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
-import requireAuth from 'components/requireAuth';
+// import requireAuth from 'components/requireAuth';
 
 class CommentBox extends Component {
-	state = { comment: '' };
+	state = { comment: '', disabled: true };
 
 	handleChange = event => {
 		this.setState({ comment: event.target.value });
@@ -30,6 +30,17 @@ class CommentBox extends Component {
 						<button className='submit'>Submit Comment</button>
 					</div>
 				</form>
+				<input
+					type='checkbox'
+					checked={this.state.disabled}
+					onChange={() => {
+						this.setState({ disabled: !this.state.disabled });
+					}}
+				/>
+				<button className='send' disabled={this.state.disabled}>
+					SEND
+				</button>
+
 				<button className='fetch-comments' onClick={this.props.fetchComments}>
 					Fetch Comments
 				</button>
@@ -38,6 +49,6 @@ class CommentBox extends Component {
 	}
 }
 
-export default connect(null, actions)(requireAuth(CommentBox));
+// export default connect(null, actions)(requireAuth(CommentBox));
 
-// export default connect(null, actions)(CommentBox);
+export default connect(null, actions)(CommentBox);
