@@ -4,8 +4,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import App from '../App';
-import CommentBox from '../CommentBox';
-import CommentList from '../CommentList';
 import Root from '../../Root';
 
 let wrapper;
