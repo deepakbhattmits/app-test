@@ -39,6 +39,7 @@ describe('the text area', () => {
 	});
 
 	it('has a text area that users can type in', () => {
+		// console.log('new comment : ', wrapped.find('textarea').prop('value'));
 		expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
 	});
 
@@ -46,5 +47,27 @@ describe('the text area', () => {
 		wrapped.find('form').simulate('submit');
 		wrapped.update();
 		expect(wrapped.find('textarea').prop('value')).toEqual('');
+	});
+});
+
+describe('the check box', () => {
+	beforeEach(() => {
+		// console.log('CHECKBOX : ', wrapped.find('input[type="checkbox"]'));
+		wrapped.find('input[type="checkbox"]').simulate('change', {
+			target: { checked: true }
+		});
+		wrapped.update();
+	});
+	it('has a checkbox with ', () => {
+		console.log(
+			'OLD CHECKBOX : ',
+			wrapped.find('input[type="checkbox"]').prop('checked')
+		);
+		console.log(
+			'NEW CHECKBOX : ',
+			wrapped.find('input[type="checkbox"]').prop('checked')
+		);
+		// console.log('Disabled : ', wrapped.find('button.send'));
+		// expect(wrapped.find('input[type="checkbox"]')).toEqual(true);
 	});
 });
