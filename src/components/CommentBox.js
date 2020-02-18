@@ -32,7 +32,7 @@ class CommentBox extends Component {
 				</form>
 				<input
 					type='checkbox'
-					checked={this.state.disabled}
+					checked={!this.state.disabled}
 					onChange={() => {
 						this.setState({ disabled: !this.state.disabled });
 					}}
