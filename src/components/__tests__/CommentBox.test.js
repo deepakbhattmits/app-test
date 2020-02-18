@@ -52,22 +52,20 @@ describe('the text area', () => {
 
 describe('the check box', () => {
 	beforeEach(() => {
-		// console.log('CHECKBOX : ', wrapped.find('input[type="checkbox"]'));
+		console.log('CHECKBOX : ', wrapped.find('input[type="checkbox"]'));
 		wrapped.find('input[type="checkbox"]').simulate('change', {
 			target: { checked: true }
 		});
 		wrapped.update();
 	});
-	it('has a checkbox with ', () => {
-		console.log(
-			'OLD CHECKBOX : ',
-			wrapped.find('input[type="checkbox"]').prop('checked')
-		);
+	// expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(true);
+
+	it('has a checkbox with checked prop', () => {
 		console.log(
 			'NEW CHECKBOX : ',
 			wrapped.find('input[type="checkbox"]').prop('checked')
 		);
 		// console.log('Disabled : ', wrapped.find('button.send'));
-		// expect(wrapped.find('input[type="checkbox"]')).toEqual(true);
+		// expect(wrapped.find('button.send').prop('disabled')).toEqual(true);
 	});
 });
