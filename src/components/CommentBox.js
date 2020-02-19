@@ -6,7 +6,7 @@ import * as actions from 'actions';
 // import requireAuth from 'components/requireAuth';
 
 class CommentBox extends Component {
-	state = { comment: '', disabled: true };
+	state = { comment: '', disabled: false };
 
 	handleChange = event => {
 		this.setState({ comment: event.target.value });
@@ -32,12 +32,12 @@ class CommentBox extends Component {
 				</form>
 				<input
 					type='checkbox'
-					checked={!this.state.disabled}
+					checked={this.state.disabled}
 					onChange={() => {
 						this.setState({ disabled: !this.state.disabled });
 					}}
 				/>
-				<button className='send' disabled={this.state.disabled}>
+				<button className='send' disabled={!this.state.disabled}>
 					SEND
 				</button>
 

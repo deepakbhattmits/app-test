@@ -39,7 +39,7 @@ describe('the text area', () => {
 	});
 
 	it('has a text area that users can type in', () => {
-		// console.log('new comment : ', wrapped.find('textarea').prop('value'));
+		// console.log('TEST COMMENTBOX: ', wrapped.find('textarea').prop('value'));
 		expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
 	});
 
@@ -51,21 +51,40 @@ describe('the text area', () => {
 });
 
 describe('the check box', () => {
-	beforeEach(() => {
-		console.log('CHECKBOX : ', wrapped.find('input[type="checkbox"]'));
+	// beforeEach(() => {
+	// wrapped.find('input[type="checkbox"]').simulate('change', {
+	// 	target: { checked: true }
+	// });
+	// wrapped.update();
+	// console.log(
+	// 	'checkbox : ',
+	// 	wrapped.find('input[type="checkbox"]').prop('checked')
+	// );
+	// });
+
+	it('has a checkbox with checked prop', () => {
 		wrapped.find('input[type="checkbox"]').simulate('change', {
 			target: { checked: true }
 		});
 		wrapped.update();
-	});
-	// expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(true);
-
-	it('has a checkbox with checked prop', () => {
-		console.log(
-			'NEW CHECKBOX : ',
-			wrapped.find('input[type="checkbox"]').prop('checked')
+		// console.log(
+		// 	'checkbox : ',
+		// 	wrapped.find('input[type="checkbox"]').prop('checked')
+		// );
+		// console.log('checkbox : ', wrapped.html());
+		expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(
+			true
 		);
-		// console.log('Disabled : ', wrapped.find('button.send'));
-		// expect(wrapped.find('button.send').prop('disabled')).toEqual(true);
+		// wrapped.update();
+		expect(wrapped.find('button.send').prop('disabled')).toEqual(false);
+		wrapped.find('input[type="checkbox"]').simulate('change', {
+			target: { checked: false }
+		});
+		wrapped.update();
+		expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(
+			false
+		);
+		// wrapped.update();
+		expect(wrapped.find('button.send').prop('disabled')).toEqual(true);
 	});
 });
