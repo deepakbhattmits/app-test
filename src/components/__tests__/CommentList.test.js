@@ -25,6 +25,7 @@ it('creates one LI per comment', () => {
 });
 
 it('shows the text for each comment', () => {
+	console.log('test one ');
 	expect(wrapped.render().text()).toContain('Comment 1');
 	expect(wrapped.render().text()).toContain('Comment 2');
 });
