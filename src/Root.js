@@ -7,7 +7,7 @@ import reduxPromise from 'redux-promise';
 import reducers from 'reducers';
 
 export default ({ children, initialState = {} }) => {
-	// console.log('root');
+	// console.log('root new');
 	const store = createStore(
 		reducers,
 		initialState,
