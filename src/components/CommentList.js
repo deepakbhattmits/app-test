@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 class CommentList extends Component {
 	renderComments() {
+		console.log('TEST COMEENTLIST');
 		return this.props.comments.map(comment => {
 			return <li key={comment}>{comment}</li>;
 		});
