@@ -51,31 +51,15 @@ describe('the text area', () => {
 });
 
 describe('the check box', () => {
-	// beforeEach(() => {
-	// wrapped.find('input[type="checkbox"]').simulate('change', {
-	// 	target: { checked: true }
-	// });
-	// wrapped.update();
-	// console.log(
-	// 	'checkbox : ',
-	// 	wrapped.find('input[type="checkbox"]').prop('checked')
-	// );
-	// });
-
 	it('has a checkbox with checked prop', () => {
 		wrapped.find('input[type="checkbox"]').simulate('change', {
 			target: { checked: true }
 		});
 		wrapped.update();
-		// console.log(
-		// 	'checkbox : ',
-		// 	wrapped.find('input[type="checkbox"]').prop('checked')
-		// );
-		// console.log('checkbox : ', wrapped.html());
+
 		expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(
 			true
 		);
-		// wrapped.update();
 		expect(wrapped.find('button.send').prop('disabled')).toEqual(false);
 		wrapped.find('input[type="checkbox"]').simulate('change', {
 			target: { checked: false }
@@ -84,7 +68,6 @@ describe('the check box', () => {
 		expect(wrapped.find('input[type="checkbox"]').prop('checked')).toEqual(
 			false
 		);
-		// wrapped.update();
 		expect(wrapped.find('button.send').prop('disabled')).toEqual(true);
 	});
 });
