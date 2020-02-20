@@ -10,8 +10,7 @@ class CommentBox extends Component {
 	state = {
 		name: 123,
 		comment: '',
-		disabled: false,
-		checkbox: [1, 2, 3, 4, 5]
+		disabled: false
 	};
 
 	handleChange = event => {
@@ -25,9 +24,7 @@ class CommentBox extends Component {
 		}
 		this.setState({ comment: '' });
 	};
-	handleSelect = () => {
-		this.setState({ disabled: !this.state.disabled });
-	};
+
 	render() {
 		return (
 			<div>
@@ -53,20 +50,6 @@ class CommentBox extends Component {
 				<button className='fetch-comments' onClick={this.props.fetchComments}>
 					Fetch Comments
 				</button>
-				{/* <button className='select' onClick={this.handleSelect}>
-					Select All
-				</button>
-				{this.state.checkbox.map(el => {
-					return (
-						<input
-							type='checkbox'
-							checked={this.state.disabled}
-							onChange={() => {
-								this.setState({ disabled: !this.state.disabled });
-							}}
-						/>
-					);
-				})} */}
 			</div>
 		);
 	}
