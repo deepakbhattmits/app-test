@@ -3,10 +3,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
+import PropTypes from 'prop-types';
 // import requireAuth from 'components/requireAuth';
 
 class CommentBox extends Component {
-	state = { comment: '', disabled: false };
+	state = {
+		name: 123,
+		comment: '',
+		disabled: false,
+		checkbox: [1, 2, 3, 4, 5]
+	};
 
 	handleChange = event => {
 		this.setState({ comment: event.target.value });
@@ -19,10 +25,13 @@ class CommentBox extends Component {
 		}
 		this.setState({ comment: '' });
 	};
-
+	handleSelect = () => {
+		this.setState({ disabled: !this.state.disabled });
+	};
 	render() {
 		return (
 			<div>
+				{this.state.name}
 				<form onSubmit={this.handleSubmit}>
 					<h4>Add a Comment</h4>
 					<textarea onChange={this.handleChange} value={this.state.comment} />
@@ -44,10 +53,27 @@ class CommentBox extends Component {
 				<button className='fetch-comments' onClick={this.props.fetchComments}>
 					Fetch Comments
 				</button>
+				{/* <button className='select' onClick={this.handleSelect}>
+					Select All
+				</button>
+				{this.state.checkbox.map(el => {
+					return (
+						<input
+							type='checkbox'
+							checked={this.state.disabled}
+							onChange={() => {
+								this.setState({ disabled: !this.state.disabled });
+							}}
+						/>
+					);
+				})} */}
 			</div>
 		);
 	}
 }
+CommentBox.propTypes = {
+	name: PropTypes.string
+};
 
 // export default connect(null, actions)(requireAuth(CommentBox));
 
