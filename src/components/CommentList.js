@@ -9,7 +9,6 @@ class CommentList extends Component {
 		checkbox: [1, 2, 3, 4, 5]
 	};
 	renderComments() {
-		console.log('TEST COMEENTLIST');
 		return this.props.comments.map(comment => {
 			return <li key={comment}>{comment}</li>;
 		});
