@@ -96,7 +96,6 @@ const MultiHeader = () => {
 		if (selectall) {
 			// we need to get at the internals of ReactTable
 			const wrappedInstance = table.current.dataFunc();
-			console.log('hello : ', wrappedInstance);
 			// the 'data' property contains the currently accessible records based on the filter and sort
 			// const currentRecords = wrappedInstance.props.data;
 			const currentRecords = wrappedInstance;
