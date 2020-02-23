@@ -8,6 +8,7 @@ import App from './components/App';
 import CommentBox from './components/CommentBox';
 // import CommentList from './components/CommentList';
 import NotFound from './components/NotFound';
+import './assets/scss/main.scss';
 const rootElement = document.querySelector('#root');
 ReactDOM.render(
 	<Root>
