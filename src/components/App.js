@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 import * as actions from 'actions';
+import MultiHeader from './MultiHeader';
 
 class App extends Component {
 	renderButton() {
@@ -33,6 +34,7 @@ class App extends Component {
 					<li>{this.renderButton()}</li>
 				</ul>
 				<CommentList />
+				<MultiHeader />
 			</>
 		);
 	}
