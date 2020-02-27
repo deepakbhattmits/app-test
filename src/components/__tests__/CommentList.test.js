@@ -21,6 +21,7 @@ beforeEach(() => {
 });
 
 it('creates one LI per comment', () => {
+	console.log('creates one LI per comment');
 	expect(wrapped.find('li').length).toEqual(2);
 });
 
