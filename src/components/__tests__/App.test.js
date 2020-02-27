@@ -27,6 +27,7 @@ it('show a comment box', () => {
 })
 */
 it('show a comment Box', () => {
+	console.log('show a comment box')
 	expect(wrapper.find(CommentBox).length).toEqual(1);
 });
 
