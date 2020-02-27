@@ -20,6 +20,7 @@ afterEach(() => {
 });
 describe('has 2 button and 1 textarea on first render ', () => {
 	it('has submit button', () => {
+		console.log('has submit button')
 		expect(wrapped.find('.submit').length).toEqual(1);
 	});
 	it('has fetchComment button', () => {
