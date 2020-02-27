@@ -40,6 +40,7 @@ class App extends Component {
 	}
 
 	render() {
+		console.log('TEST APP')
 		return (
 			<div>
 				{this.renderHeader()}
