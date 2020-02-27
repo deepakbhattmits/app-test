@@ -26,6 +26,7 @@ class CommentBox extends Component {
 	};
 
 	render() {
+		console.log('TEST COMMENT BOX');
 		return (
 			<div>
 				{this.state.name}
