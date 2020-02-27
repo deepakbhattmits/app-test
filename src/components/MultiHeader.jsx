@@ -89,7 +89,7 @@ const MultiHeader = () => {
       that act on the selected information (you would not want to DELETE the wrong thing!).
       
       So, to that end, access to the internals of ReactTable are required to get what is
-      currently visible in the table (either on the current page or any other page).
+      currently visible in the table (either on the current page or any other page)
     */
 		const selectall = selectAll ? false : true;
 		const selection = [];
